@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<div style="position: relative;">神自不凡</div>
+	</body>
+	<script src="../node_modules/jquery/dist/jquery.js"></script>
+	<script type="text/javascript">
+		$(window).mousemove(function(ev){
+			$("div").css({
+				left:ev.clientX,
+				top:ev.pageY
+			})
+		})
+	</script>
+</html>

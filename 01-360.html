@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+				list-style: none;
+			}
+			.box{
+				width: 1000px;
+				margin: 50px auto;
+				border: 1px solid red;
+				overflow: hidden;
+				text-align: center;
+				padding: 10px;
+			}
+			ul{
+				display: flex;
+				justify-content: space-between;
+				flex-wrap: wrap;
+			}
+			ul li{
+				width: 24%;
+				height: 125px;
+				border: 1px solid red;
+				position: relative;
+				margin-bottom: 10px;
+				overflow: hidden;
+			}
+			ul li:nth-child(5n){
+				margin-left: 0;
+			}
+			ul li:hover p{
+				bottom: 0;
+			}
+			ul li+li{
+				margin-left:10px;
+			}
+			ul li p{
+				background: #555555;
+				position: absolute;
+				bottom: -21;
+				display: block;
+				width: 100%;
+				transition: all 0.5s;
+			}
+			ul li p .icon_bd{
+				background: url(img01/bg.png);
+				width: 16px;
+				height: 16px;
+				position: absolute;
+				margin-top: 4px;
+				left: 35px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<ul>
+				
+			</ul>
+		</div>
+	<script src="../node_modules/jquery/dist/jquery.js"></script>
+		<script type="text/javascript">
+			var imgPath=["img01/01.JPG","img01/02.JPG","img01/03.JPG","img01/04.JPG","img01/01.JPG","img01/02.JPG","img01/03.JPG","img01/04.JPG"];
+			
+			$.each(imgPath, function(index,val) {
+				var str='<li>'
+					str+='<img src="'+val+'"/>'
+					str+='<p><i class="icon_bd" style="background-position-y:'+(index*-25-4)+"px"+' ;"></i>百度一下,你就知道</p>'
+					str+='</li>'
+				$("ul").append(str);
+			});
+			
+		</script>
+	</body>
+</html>
